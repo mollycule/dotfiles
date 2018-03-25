@@ -1,0 +1,29 @@
+# ~/.config/.gitignore
+# The gitignore file for my dotfiles setup
+
+# Ignore everything by default
+/*
+
+# Ironically, allow this file
+!/.gitignore
+
+# Allow README.md
+!/README.md
+
+# Allow LICENSE
+!/LICENSE
+
+# Allow other certain files
+!/user-dirs.dirs
+
+# Allow certain directories
+!/cssh/
+!/cursor/
+!/dunst/
+!/i3/
+!/polybar/
+!/rofi/
+!/scripts/
+!/wal/
+!/x/
+!/bash/

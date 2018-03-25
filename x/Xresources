@@ -1,0 +1,26 @@
+! ----- Xft settings -----
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xft.dpi: 96
+Xcursor.theme: Default
+
+! ----- urxvt settings -----
+! Disable the scrollbar by default
+URxvt.scrollbar: false
+
+! Set the internal border
+URxvt.internalBorder: 15
+
+! Disable these to make Ctrl-Shift bindings work
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.perl-ext-common: resize-font
+
+URxvt.font: -*-terminus-medium-*-16-*
+
+!URxvt.letterSpace: -1

@@ -1,0 +1,23 @@
+# ~/.xinitrc
+
+# Setup language
+export LANG='en_US.UTF-8'
+export LC_CTYPE='en_US.UTF-8'
+
+# Setup dunst
+export DUNST_FONT='Terminus 10'
+export DUNST_SIZE='300x30-40+40'
+
+# Additional x settings
+xset s off -dpms
+xset m 1/1
+xset -b
+
+# Merge in the Xresources
+xrdb -merge "$HOME/.Xresources"
+
+# Setup the urxvt daemon
+urxvtd -q -f &
+
+# Start i3
+exec i3

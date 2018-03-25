@@ -1,0 +1,14 @@
+#!/bin/bash
+# ~/.config/scripts/lock
+# A script to appropriately configure lock screen with or without multi-monitors
+
+display_count=$(xrandr | grep ' connected' | wc -l)
+
+multi_setup="i3lock --no-unlock-indicator --ignore-empty-password --image=$HOME/pics/fox_multi.png"
+uni_setup="i3lock --no-unlock-indicator --ignore-empty-password --image=$HOME/pics/fox.png"
+
+if [ $display_count -gt 1 ]; then
+    $multi_setup
+else
+    $uni_setup
+fi

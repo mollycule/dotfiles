@@ -1,0 +1,185 @@
+# ~/.config/i3/config
+
+# Set modifier
+set $mod Mod4
+
+# Set "floating" modifier
+floating_modifier $mod
+
+# Kill the currently focused container
+bindsym $mod+q kill
+
+# Restart window manager in-place
+bindsym $mod+Shift+r exec --no-startup-id "$HOME/.config/scripts/i3-restart-wrapper"
+
+# Terminal (rxvt-unicode)
+bindsym $mod+Return exec urxvt +sb -title "Terminal"
+
+# Disable focus by hovering / Set mouse focus to "click"
+focus_follows_mouse no
+
+# Float all windows by default TODO: specify by application (cssh)
+for_window [class="^.*"] floating enable
+
+# Change the container layout to tabbed
+bindsym $mod+Shift+t exec --no-startup-id "i3-msg layout tabbed"
+
+# Toggle between tiling and floating mode on the focused container
+bindsym $mod+Shift+space floating toggle
+
+# Toggle split layout mode
+bindsym $mod+Shift+e exec --no-startup-id "i3-msg layout toggle split"
+
+# Lock Screen (--tiling for multi-monitor setup)
+bindsym $mod+Shift+l exec --no-startup-id "$HOME/.config/scripts/lock"
+
+# Generic program launcher (rofi)
+bindsym $mod+Home exec "$HOME/.config/scripts/rofi-run"
+
+# Establish SSH connection (rofi)
+bindsym $mod+Shift+Home exec "$HOME/.config/scripts/rofi-ssh"
+
+# Switch between windows across multiple workspaces with ALT+TAB (rofi)
+bindsym Mod1+Tab exec "$HOME/.config/scripts/rofi-window"
+
+# Exit window manager
+bindsym $mod+Shift+End exec --no-startup-id "i3-msg exit"
+
+# Change current focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Set up volume keybindings
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Set up music keybindings
+bindsym XF86AudioPrev exec --no-startup-id ncmpcpp toggle prev 
+bindsym XF86AudioNext exec --no-startup-id ncmpcpp toggle next 
+bindsym XF86AudioPlay exec --no-startup-id ncmpcpp toggle play
+bindsym XF86AudioMute exec --no-startup-id ncmpcpp toggle mute
+
+# Start set up for work
+bindsym $mod+Shift+F1 "$HOME/.config/scripts/start-work"
+
+
+# -------------- Appearance  ----------------
+
+
+# Set the default font and title format of all windows
+font pango:Terminus 12
+for_window [class=".*"] title_format "<span font='Times New Roman 10'> [ %title ]</span>"
+
+# Set the window border size (in pixels)
+for_window [class="^.*"] border normal 3
+
+# Enable smart borders
+smart_borders on
+
+# Set the inner and outer gap sizes (in pixels)
+gaps inner 0
+gaps outer 0
+
+# -------------------------------------------
+
+
+# -------------- Colors ---------------------
+
+# Set color variables
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $c0 i3wm.color0 #f0f0f0
+set_from_resource $c1 i3wm.color1 #f0f0f0
+set_from_resource $c2 i3wm.color2 #f0f0f0
+set_from_resource $c3 i3wm.color3 #f0f0f0
+set_from_resource $c4 i3wm.color4 #f0f0f0
+set_from_resource $c5 i3wm.color5 #f0f0f0
+set_from_resource $c6 i3wm.color6 #f0f0f0
+set_from_resource $c7 i3wm.color7 #f0f0f0
+set_from_resource $c8 i3wm.color8 #f0f0f0
+set_from_resource $c9 i3wm.color9 #f0f0f0
+set_from_resource $c10 i3wm.color10 #f0f0f0
+set_from_resource $c11 i3wm.color11 #f0f0f0
+set_from_resource $c12 i3wm.color12 #f0f0f0
+set_from_resource $c13 i3wm.color13 #f0f0f0
+set_from_resource $c14 i3wm.color14 #f0f0f0
+set_from_resource $c15 i3wm.color15 #f0f0f0
+
+# Set window colors
+# CLASS                  BRDR  BCKGRD  TXT  NDCTR  CHLDBRDR
+client.focused           $c5   $c5     $fg  $c5    $c5
+client.focused_inactive  $bg   $bg     $fg  $bg    $bg
+client.unfocused         $bg   $bg     $fg  $bg    $bg
+client.urgent            $bg   $bg     $fg  $bg    $bg
+client.placeholder       $bg   $bg     $fg  $bg    $bg
+client.background        $bg
+
+# -------------------------------------------
+
+
+# -------------- Screenshots ----------------
+
+# Take a screenshot (fullscreen)
+bindsym $mod+Insert exec --no-startup-id "$HOME/.config/scripts/scrot-full"
+
+# Take a screenshot (selection)
+bindsym --release $mod+Shift+Insert exec --no-startup-id "$HOME/.config/scripts/scrot-select"
+
+# -------------------------------------------
+
+
+# -------------- Workspaces -----------------
+
+# Monitors
+set $MonitorCenter eDP1
+set $MonitorLeft HDMI1
+set $MonitorRight DisplayPort-1-2
+
+# Define workspace output monitors
+workspace 1 output $MonitorLeft
+workspace 2 output $MonitorLeft
+workspace 3 output $MonitorLeft
+workspace 4 output $MonitorLeft
+workspace 5 output $MonitorCenter
+workspace 6 output $MonitorCenter
+workspace 7 output $MonitorRight
+workspace 8 output $MonitorRight
+workspace 9 output $MonitorRight
+workspace 10 output $MonitorRight
+
+# Switch between workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container between workspaces
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# -------------------------------------------
+
+exec --no-startup-id "$HOME/.config/scripts/start-up"

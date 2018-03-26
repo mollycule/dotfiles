@@ -63,10 +63,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Set up music keybindings
-bindsym XF86AudioPrev exec --no-startup-id ncmpcpp toggle prev 
-bindsym XF86AudioNext exec --no-startup-id ncmpcpp toggle next 
-bindsym XF86AudioPlay exec --no-startup-id ncmpcpp toggle play
-bindsym XF86AudioMute exec --no-startup-id ncmpcpp toggle mute
+#bindsym XF86AudioPrev exec --no-startup-id ncmpcpp toggle prev 
+#bindsym XF86AudioNext exec --no-startup-id ncmpcpp toggle next 
+#bindsym XF86AudioPlay exec --no-startup-id ncmpcpp toggle play
+#bindsym XF86AudioMute exec --no-startup-id ncmpcpp toggle mute
 
 # Start set up for work
 bindsym $mod+Shift+F1 "$HOME/.config/scripts/start-work"

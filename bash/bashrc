@@ -9,4 +9,6 @@ fi
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias netstat='ss -pantu | column -t'
+
 PS1='[\u@\h \W]\$ '

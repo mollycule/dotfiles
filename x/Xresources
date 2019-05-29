@@ -2,7 +2,8 @@
 Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true
-Xft.hintstyle: hintslight
+!Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 Xft.dpi: 96
@@ -21,6 +22,15 @@ URxvt.iso14755_52: false
 
 URxvt.perl-ext-common: resize-font
 
+! Set Ctrl-Shift-{+,-} to change font size
+URxvt.keysym.C-+: resize-font:bigger
+URxvt.keysym.C-_: resize-font:smaller
+
+! Set font
 URxvt.font: -*-terminus-medium-*-16-*
 
 !URxvt.letterSpace: -1
+
+! Disables printing out a screen dump of my terminal when PrntScrn is pressed
+! Nice try, satan.
+URxvt.print-pipe: "cat > /dev/null"

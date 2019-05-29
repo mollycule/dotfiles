@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/.config/scripts/rofi-run
-# Wrapper for rofi's run mode
+# ~/.config/scripts/rofi-window.sh
+# Wrapper for rofi's "window" mode
 
 rofi -show window

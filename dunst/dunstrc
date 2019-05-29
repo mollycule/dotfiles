@@ -88,7 +88,7 @@ startup_notification = false
 dmenu = /usr/bin/dmenu -p dunst:
 
 # Browser for opening urls in context menu.
-browser = /usr/bin/firefox -new-tab
+browser = /usr/bin/chromium --new-window
 
 # Align icons left/right/off
 icon_position = off
@@ -101,18 +101,18 @@ frame_width = 0
 
 
 [urgency_low]
-background = "#f0f0f0"
-foreground = "#2b3635"
+#background = "#636872"
+#foreground = "#ffffff"
 timeout = 3
 
 
 [urgency_normal]
-background = "#f0f0f0"
-foreground = "#2b3635"
+#background = "#636872"
+#foreground = "#ffffff"
 timeout = 3
 
 
 [urgency_critical]
-background = "#f0f0f0"
-foreground = "#d6787f"
+#background = "#dd1d00"
+#foreground = "#ffffff"
 timeout = 5

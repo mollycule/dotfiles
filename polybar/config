@@ -15,7 +15,7 @@ modfg = ${xrdb:color1}
 
 
 [bar/bar-primary]
-monitor = eDP1
+monitor = HDMI1 
 bottom = false
 #wm-restack = i3
 
@@ -40,7 +40,7 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = brightness battery 
+modules-right = memory 
 modules-center = date
 modules-left = i3
 
@@ -59,7 +59,8 @@ font-3 = Times New Roman:size=12
 
 
 [bar/bar-left]
-monitor = HDMI1
+#monitor = DisplayPort-1-2
+monitor = eDP1 
 bottom = false
 #wm-restack = i3
 
@@ -84,7 +85,7 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = memory
+modules-right = memory battery
 modules-center = date
 modules-left = i3
 
@@ -172,6 +173,7 @@ module-margin-right = 0
 module-margin-left = 2
 
 #modules-right = disk-boot disk-root disk-home
+modules-right = brightness
 modules-center = date
 modules-left = i3
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/.config/scripts/ssh-wrapper
+# ~/.config/scripts/ssh-wrapper.sh
 # A wrapper script to set TERM because rofy doesn't like "=" signs >_>
 
 if [[ $1 = *"{"*"}"* ]]; then

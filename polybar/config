@@ -1,6 +1,7 @@
 # ~/.config/polybar/config
 # Primary polybar configuration file
 
+; ----- Global Settings -----
 
 [global/wm]
 margin-top = 100
@@ -13,11 +14,20 @@ fg = ${xrdb:color7}
 bg = ${xrdb:color3}
 modfg = ${xrdb:color1}
 
+[sizes]
+height = 20
+
+[monitors]
+# TODO pull from env variables
+center = HDMI-1
+left = eDP-1
+right = HDMI-1
+
+; ----- Bar Settings -----
 
 [bar/bar-primary]
-monitor = HDMI1 
+monitor = ${monitors.left} 
 bottom = false
-#wm-restack = i3
 
 fixed-center = true
 
@@ -40,7 +50,7 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = memory 
+modules-right = cpu memory temp-cpu battery 
 modules-center = date
 modules-left = i3
 
@@ -52,17 +62,14 @@ overline-color = ${colors.fg}
 underline-size = 0
 underline-color = ${colors.fg}
 
-font-0 = Terminus:size=10
-font-1 = Times New Roman:size=12
-font-2 = Terminus7:size=10
-font-3 = Times New Roman:size=12
-
+font-0 = "Iosevka SS02:size=10;3"
+font-1 = "Iosevka SS02:size=10;3"
+font-2 = "Iosevka SS02:size=10;3"
+font-3 = "Iosevka SS02:size=10;3"
 
 [bar/bar-left]
-#monitor = DisplayPort-1-2
-monitor = eDP1 
+monitor = ${monitors.left}
 bottom = false
-#wm-restack = i3
 
 fixed-center = true
 
@@ -85,7 +92,7 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = memory battery
+modules-right = cpu memory temp-cpu battery
 modules-center = date
 modules-left = i3
 
@@ -97,14 +104,13 @@ overline-color = ${colors.fg}
 underline-size = 0
 underline-color = ${colors.fg}
 
-font-0 = Terminus:size=10
-font-1 = Times New Roman:size=12
-font-2 = Terminus7:size=10
-font-3 = Times New Roman:size=12
-
+font-0 = "Iosevka SS02:size=10;3"
+font-1 = "Iosevka SS02:size=10;3"
+font-2 = "Iosevka SS02:size=10;3"
+font-3 = "Iosevka SS02:size=10;3"
 
 [bar/bar-single-monitor]
-monitor = HDMI1
+monitor = ${monitors.center}
 bottom = false
 
 fixed-center = true
@@ -128,9 +134,9 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = 
-modules-center = i3
-modules-left =
+modules-right = cpu memory temp-cpu battery 
+modules-center = date
+modules-left = i3
 
 background = ${colors.bg}
 foreground = ${colors.fg}
@@ -140,16 +146,14 @@ overline-color = ${colors.fg}
 underline-size = 0
 underline-color = ${colors.fg}
 
-font-0 = Terminus:size=10
-font-1 = Times New Roman:size=12
-font-2 = Terminus7:size=10
-font-3 = Times New Roman:size=12
-
+font-0 = "Iosevka SS02:size=10;3"
+font-1 = "Iosevka SS02:size=10;3"
+font-2 = "Iosevka SS02:size=10;3"
+font-3 = "Iosevka SS02:size=10;3"
 
 [bar/bar-right]
-monitor = DisplayPort-1-2
+monitor = ${monitors.right}
 bottom = false
-#wm-restack = i3
 
 fixed-center = true
 
@@ -172,7 +176,6 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-#modules-right = disk-boot disk-root disk-home
 modules-right = brightness
 modules-center = date
 modules-left = i3
@@ -185,207 +188,92 @@ overline-color = ${colors.fg}
 underline-size = 0
 underline-color = ${colors.fg}
 
-font-0 = Terminus:size=10
-font-1 = Times New Roman:size=12
-font-2 = Terminus7:size=10
-font-3 = Times New Roman:size=12
+font-0 = "Iosevka SS02:size=10;3"
+font-1 = "Iosevka SS02:size=10;3"
+font-2 = "Iosevka SS02:size=10;3"
+font-3 = "Iosevka SS02:size=10;3"
 
-
-#[module/network-status]
-#type = custom/script
-#exec = /home/harrisont/.config/polybar/network-status
-#tail = false
-#interval = 5
-#click-left = /home/harrisont/.config/polybar/network-status-detailed
-#label = [ NET %output% ]
-#
-#
-#[module/vpn-status]
-#type = custom/script
-#exec = /home/harrisont/.config/polybar/vpn-status
-#tail = false
-#interval = 5
-#click-left = /home/harrisont/.config/polybar/vpn-status-detailed
-#label = [ VPN %output% ]
-
-
-[module/brightness]
-type = internal/xbacklight
-output = eDP1
-enable-scroll = true
-label = [ BKLT %percentage%% ]
-
-
-#[module/temp-cpu]
-#type = internal/temperature
-#interval = 5
-#thermal-zone = 0
-##hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input
-#warn-temperature = 80
-#label = [ TEMP %temperature% ]
-#label-warn = [ TEMP %temperature% ! ]
-
-
-# [module/temp-graphics]
-# type = internal/temperature
-# interval = 5
-# thermal-zone = 0
-# hwmon-path = /sys/devices/pci0000:00/0000:00:1c.4/0000:03:00.0/hwmon/hwmon1/temp1_input
-# warn-temperature = 80
-# label = [ GRPHCS TEMP %temperature% ]
-# label-warn = [ GRPHCS TEMP %temperature% ! ]
-
-
-# [module/temp-battery]
-# type = internal/temperature
-# interval = 5
-# thermal-zone = 0
-# hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input
-# warn-temperature = 80
-# label = [ TEMP %temperature% ]
-# label-warn = [ TEMP %temperature% ! ]
-
-
-[module/disk-root]
-type = internal/fs
-interval = 30
-
-mount-0 = /
-
-label-mounted = [ ROOT %free% ]
-label-mounted-underline = ${colors.fg}
-label-mounted-padding = 0
-label-mounted-background = ${colors.bg}
-label-unmounted = [%mountpoint%] Unmounted
-label-unmounted-foreground = ${colors.bg}
-
+; ----- Module Settings -----
 
 [module/battery]
 type = internal/battery
 full-at = 99
-
 battery = BAT0
 adapter = AC
-
 poll-interval = 5
-
 format-charging = <label-charging>
 format-discharging = <label-discharging>
-
 label-charging = [ BAT %percentage%% + ]
 label-discharging = [ BAT %percentage%% - ]
 label-full = [ BAT 100% ]
 
+[module/brightness]
+type = internal/xbacklight
+output = ${monitors.left}
+enable-scroll = true
+label = [ BKLT %percentage%% ]
 
-#[module/disk-home]
-#type = internal/fs
-#interval = 30
-#
-#mount-0 = /home
-#
-#label-mounted = [ HOME %free% ]
-#label-mounted-underline = ${colors.fg}
-#label-mounted-padding = 0
-#label-mounted-background = ${colors.bg}
-#label-unmounted = [%mountpoint%] Unmounted
-#label-unmounted-foreground = ${colors.bg}
-
-
-[module/disk-boot]
-type = internal/fs
-interval = 30
-
-mount-0 = /boot
-
-label-mounted = [ BOOT %free% ]
-label-mounted-underline = ${colors.fg}
-label-mounted-padding = 0
-label-mounted-background = ${colors.bg}
-label-unmounted = [%mountpoint%] Unmounted
-label-unmounted-foreground = ${colors.bg}
-
-
-[module/memory]
-type = internal/memory
-interval = 1
-
-label = [ MEM %percentage_used%% ]
-label-underline = ${colors.fg}
-label-foreground = ${colors.fg}
-label-background = ${colors.bg}
-
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = [ CPU <label> ]
+label = "%percentage%%"
 
 [module/date]
 type = internal/date
 interval = 10
-
 date = %m/%d/%y
 time = %H:%M
-
 label = [ %date% %time% ]
 label-underline = ${colors.fg}
 label-foreground = ${colors.fg}
 label-background = ${colors.bg}
 
-
-#[module/cpu]
-#type = custom/script
-#exec = /home/harrisont/.config/polybar/cpu
-#click-left = "urxvtc +sb -title 'System Monitor' -e 'htop'"
-#interval = 0.5
-#format = [ <label> ]
-#label = "CPU %output%%"
-
-
-[module/volume-alsa]
-type = internal/alsa
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
-master-mixer = Master
-speaker-mixer =
-headpohone-mixer =
-headphone-id =
-mapping = false
-format-volume = [ <label-volume> ]
-format-muted = [ <label-muted> ]
-label-muted = "VOL MUTED"
-label-volume = "VOL %percentage%%"
-
-
-[module/volume]
-type = internal/pulseaudio
-format-volume = [ <label-volume> ]
-format-muted = [ <label-muted> ]
-label-muted = "VOL MUTED"
-label-volume = "VOL %percentage%%"
-
-
 [module/i3]
 type = internal/i3
-
-pin-workspaces = true
-strip-wsnumbers = false
-index-sort = true
 enable-click = true
 enable-scroll = true
-wrapping-scroll = true
-reverse-scroll = false
-fuzzy-match = true
-
 format = <label-state>
+fuzzy-match = true
+index-sort = true
 label-focused = "%{O2}[ %index% ] "
-label-unfocused = "%{O2}  %index%   "
-label-visible = "%{O2}[ %index% ] "
-label-urgent = "%{O2}  %index%!  "
 label-mode = %mode%
+label-unfocused = "%{O2}  %index%   "
+label-urgent = "%{O2}  %index%!  "
+label-visible = "%{O2}[ %index% ] "
+pin-workspaces = true
+reverse-scroll = false
+strip-wsnumbers = false
+wrapping-scroll = true
+
+[module/memory]
+type = internal/memory
+interval = 1
+label = [ MEM %percentage_used%% ]
+label-underline = ${colors.fg}
+label-foreground = ${colors.fg}
+label-background = ${colors.bg}
 
 [module/mpd]
 type = internal/mpd
-
 host = 127.0.0.1
 port = 6600
-
 ; Seconds to sleep between progressbar/song timer sync
 ; Default: 1
 interval = 2
+
+[module/temp-cpu]
+type = internal/temperature
+interval = 5
+label = [ TEMP %temperature-f% ]
+label-warn = [ TEMP %temperature-f% ! ]
+thermal-zone = 0
+warn-temperature = 80 #Celsius == 176 Fahrenheit == 353.15 Kelvin
+
+[module/volume]
+type = internal/pulseaudio
+format-volume = [ VOL <label-volume> ]
+format-muted = [ VOL <label-muted> ]
+label-muted = "MUTED"
+label-volume = "%percentage%%"
+

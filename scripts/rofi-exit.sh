@@ -14,7 +14,9 @@ elif [ "$result" == "Logout" ]; then
 elif [ "$result" == "Restart" ]; then
     systemctl reboot
 elif [ "$result" == "Shutdown" ]; then
-    # FUTURE TODO: verify openvpn connections are closed
+    if pgrep openvpn; then
+        sudo pkill openvpn || exit 2
+    fi
     systemctl poweroff
 else
     echo "Unknown option."

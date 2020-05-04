@@ -1,6 +1,9 @@
 # ~/.config/rofi/config
 # Primary rofi configuration file.
 
+# Set the font
+rofi.font: Iosevka SS02 12
+
 # Hide the scrollbar.
 rofi.hide-scrollbar: true
 

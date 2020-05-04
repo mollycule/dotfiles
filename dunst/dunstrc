@@ -1,3 +1,8 @@
+# Dunst Configuration File
+# ~/.config/dunst/dunstrc
+
+# ----- Global Settings -----
+
 [global]
 
 # Disable markup
@@ -16,7 +21,7 @@ sort = yes
 indicate_hidden = yes
 
 # Set the text alignment
-alignment = left
+alignment = center
 
 # The frequency with which text that is longer than the notification window allows bounces back and forth.
 # This option conflicts with "word_wrap".
@@ -88,7 +93,7 @@ startup_notification = false
 dmenu = /usr/bin/dmenu -p dunst:
 
 # Browser for opening urls in context menu.
-browser = /usr/bin/chromium --new-window
+browser = /usr/bin/firefox --new-window
 
 # Align icons left/right/off
 icon_position = off
@@ -99,20 +104,15 @@ icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/de
 # Disable the frame
 frame_width = 0
 
+# ----- Urgency Settings -----
 
 [urgency_low]
-#background = "#636872"
-#foreground = "#ffffff"
 timeout = 3
 
 
 [urgency_normal]
-#background = "#636872"
-#foreground = "#ffffff"
 timeout = 3
 
 
 [urgency_critical]
-#background = "#dd1d00"
-#foreground = "#ffffff"
 timeout = 5

@@ -5,10 +5,35 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec startx > $HOME/.i3-last-run.log 2>&1
 fi
 
+# Customize prompt
+export PS1="\u@\h [\W] "
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Stop stupid beep
+xset -b
+
+## History settings
+HISTSIZE=50000
+HISTFILESIZE=50000
+
+# Aliaseses
+alias dnd='cd /home/justa/projects/personal/totty/dnd'
 alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
 alias netstat='ss -pantu | column -t'
 
-PS1='[\u@\h \W]\$ '
+# Kubectl autocomplete
+source <(kubectl completion bash)
+alias k='kubectl'
+complete -F __start_kubectl k
+
+# Autocorrect previous command
+eval "$(thefuck --alias)"
+
+function ssh {
+    echo -e '\033]2;'"SSH : $1"'\007'
+    TERM="rxvt" /usr/bin/ssh $@
+}
+

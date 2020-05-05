@@ -1,8 +1,7 @@
 ! ----- Xft settings -----
 Xft.autohint: 0
 Xft.antialias: 1
-Xft.hinting: true
-!Xft.hintstyle: hintslight
+Xft.hinting: 1
 Xft.hintstyle: hintfull
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
@@ -20,6 +19,10 @@ URxvt.internalBorder: 15
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+! TODO fix following error
+! urxvt: perl extension 'resize-font' not found in perl library search path
+! it is in path, so... dunno
+! Declare perl extensions
 URxvt.perl-ext-common: resize-font
 
 ! Set Ctrl-Shift-{+,-} to change font size
@@ -27,9 +30,7 @@ URxvt.keysym.C-+: resize-font:bigger
 URxvt.keysym.C-_: resize-font:smaller
 
 ! Set font
-URxvt.font: -*-terminus-medium-*-16-*
-
-!URxvt.letterSpace: -1
+URxvt.font: xft:Iosevka SS02:size=12
 
 ! Disables printing out a screen dump of my terminal when PrntScrn is pressed
 ! Nice try, satan.

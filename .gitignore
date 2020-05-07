@@ -17,8 +17,7 @@
 !/user-dirs.dirs
 
 # Allow certain directories
-!/cssh/
-!/cursor/
+!/bash/
 !/dunst/
 !/i3/
 !/polybar/
@@ -26,4 +25,3 @@
 !/scripts/
 !/wal/
 !/x/
-!/bash/

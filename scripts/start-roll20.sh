@@ -2,6 +2,7 @@
 # ~/.config/scripts/start-roll20.sh
 # Script to automate DMing in Roll20
 
+# TODO get an i3 layout defined so that i don't use sleep statements to align things
 # Use Chromium until Firefox fixes rendering issue
 i3-msg 'workspace 1; exec /usr/bin/chromium "https://roll20.net/welcome"' && sleep 2s
 i3-msg 'workspace 1; exec /usr/bin/discord' && sleep 3s

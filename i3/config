@@ -1,6 +1,6 @@
 # ~/.config/i3/config
 
-# ---------------- Modifier -----------------
+# ----- Modifier -----
 
 # Set modifier to the "Windows key"
 set $mod Mod4
@@ -8,9 +8,9 @@ set $mod Mod4
 # Set "floating" modifier
 floating_modifier $mod
 
-# -------------------------------------------
+# --------------------
 
-# -------------- Colors ---------------------
+# ----- Colors -----
 
 # Set color variables
 set_from_resource $fg i3wm.color7 #f0f0f0
@@ -42,12 +42,12 @@ client.urgent            $bg   $bg     $fg  $bg    $bg
 client.placeholder       $bg   $bg     $fg  $bg    $bg
 client.background        $bg
 
-# -------------------------------------------
+# ------------------
 
 
-# ----------- Launching Programs ------------
+# ----- Launching Programs -----
 
-# File manager(?)
+# File manager(?) - TODO ranger?
 
 # Lock Screen (--tiling for multi-monitor setup)
 bindsym $mod+Shift+l exec --no-startup-id "$HOME/.config/scripts/lock.sh"
@@ -56,6 +56,7 @@ bindsym $mod+Shift+l exec --no-startup-id "$HOME/.config/scripts/lock.sh"
 bindsym $mod+Shift+F2 exec --no-startup-id "$HOME/.config/scripts/rofi-network.sh"
 
 # Password Manager
+# TODO change to keepassx or vault
 bindsym $mod+F12 exec --no-startup-id "$HOME/.config/scripts/rofi-lpass.sh"
 
 # Program Launcher
@@ -76,15 +77,14 @@ bindsym $mod+Shift+a exec --no-startup-id /usr/bin/emacs
 # Terminal (rxvt-unicode)
 bindsym $mod+Return exec urxvt +sb -title "Terminal"
 
-# TODO Switch between windows in current workspaces with ALT+TAB (rofi)
 # Window Switcher 
 bindsym Mod1+Tab exec "$HOME/.config/scripts/rofi-window.sh"
 
-# -------------------------------------------
+# ------------------------------
 
 
 
-# ---------- Controlling Programs -----------
+# ----- Controlling Programs -----
 
 # Tile all windows by default TODO: specify by application (cssh)
 #for_window [class="^.*"] tiling enable
@@ -140,29 +140,28 @@ bindsym $mod+Shift+r exec --no-startup-id "$HOME/.config/scripts/i3-restart.sh"
 # Exit window manager
 bindsym $mod+Shift+End exec --no-startup-id "$HOME/.config/scripts/rofi-exit.sh"
 
-# -------------------------------------------
+# --------------------------------
 
 
-## --------------- Backlight------------------
-#
+# ----- Backlight-----
+
 ## Set up backlight keybindings
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-#
-## -------------------------------------------
+
+# --------------------
 
 
-# --------------- Volume --------------------
+# ----- Volume -----
 
-# Set up volume keybindings
+# Set up system volume keybindings
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-# -------------------------------------------
+# ------------------
 
-
-# -------------- Workspaces -----------------
+# ----- Workspaces -----
 
 # Monitors
 set $MonitorCenter HDMI1
@@ -180,6 +179,16 @@ workspace 7 output $MonitorRight
 workspace 8 output $MonitorRight
 workspace 9 output $MonitorRight
 workspace 10 output $MonitorRight
+workspace 11 output $MonitorCenter
+workspace 12 output $MonitorCenter
+workspace 13 output $MonitorCenter
+workspace 14 output $MonitorCenter
+workspace 15 output $MonitorCenter
+workspace 16 output $MonitorCenter
+workspace 17 output $MonitorCenter
+workspace 18 output $MonitorCenter
+workspace 19 output $MonitorCenter
+workspace 20 output $MonitorCenter
 
 # Switch between workspaces
 bindsym $mod+1 workspace 1
@@ -192,6 +201,16 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+Control+1 workspace 11
+bindsym $mod+Control+2 workspace 12
+bindsym $mod+Control+3 workspace 13
+bindsym $mod+Control+4 workspace 14
+bindsym $mod+Control+5 workspace 15
+bindsym $mod+Control+6 workspace 16
+bindsym $mod+Control+7 workspace 17
+bindsym $mod+Control+8 workspace 18
+bindsym $mod+Control+9 workspace 19
+bindsym $mod+Control+0 workspace 20
 
 # Move focused container between workspaces
 bindsym $mod+Shift+1 move container to workspace 1
@@ -204,15 +223,25 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Control+Shift+1 move container to workspace 11
+bindsym $mod+Control+Shift+2 move container to workspace 12
+bindsym $mod+Control+Shift+3 move container to workspace 13
+bindsym $mod+Control+Shift+4 move container to workspace 14
+bindsym $mod+Control+Shift+5 move container to workspace 15
+bindsym $mod+Control+Shift+6 move container to workspace 16
+bindsym $mod+Control+Shift+7 move container to workspace 17
+bindsym $mod+Control+Shift+8 move container to workspace 18
+bindsym $mod+Control+Shift+9 move container to workspace 19
+bindsym $mod+Control+Shift+0 move container to workspace 20
 
-# -------------------------------------------
+# ----------------------
 
 
-# -------------- Appearance  ----------------
+# ----- Appearance  -----
 
 # Set the default font and title format of all windows
-font pango:Terminus 12
-for_window [class=".*"] title_format "<span font='Times New Roman 10'> [ %title ]</span>"
+font pango:Iosevka SS02 16
+for_window [class=".*"] title_format "<span font='Iosevka SS02' font_size='x-small'> [ %title ]</span>"
 
 # Set the window border size (in pixels)
 for_window [class="^.*"] border normal 3
@@ -224,12 +253,11 @@ smart_borders on
 gaps inner 0
 gaps outer 0
 
-# -------------------------------------------
+# -----------------------
 
 
-# ------------Applications-------------------
+# ----- Applications -----
 
-# TODO parametrize to check monitor setup
 bindsym $mod+Shift+c exec --no-startup-id /usr/bin/chromium
 bindsym $mod+Shift+d exec --no-startup-id "$HOME/.config/scripts/docking.sh"
 bindsym $mod+Shift+f exec --no-startup-id /usr/bin/firefox --private-window
@@ -237,9 +265,11 @@ bindsym $mod+Shift+m exec --no-startup-id /usr/bin/vlc -I qt -LZ --no-playlist-a
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/chromium --incognito "https://youtube.com"
 bindsym $mod+Shift+w exec --no-startup-id "$HOME/.config/scripts/start-work.sh"
 
-# ------------- Initialization --------------
+# ------------------------
+
+
+# ----- Initialization -----
 
 exec --no-startup-id "$HOME/.config/scripts/start-up.sh"
 
-# -------------------------------------------
-
+# --------------------------

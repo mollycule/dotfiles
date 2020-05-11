@@ -61,7 +61,7 @@ bindsym $mod+Home exec "$HOME/.config/scripts/rofi-run.sh"
 bindsym $mod+Insert exec --no-startup-id "$HOME/.config/scripts/scrot-full.sh"
 
 # Screenshot (selection)
-bindsym $mod+Shift+Insert exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"
+bindsym --release $mod+Shift+Insert exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"
 
 # SSH Launcher 
 bindsym $mod+Shift+Home exec "$HOME/.config/scripts/rofi-ssh.sh"

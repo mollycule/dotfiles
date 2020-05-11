@@ -147,31 +147,30 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 # ----- Workspaces -----
 
 # Monitors
-set $MonitorCenter HDMI1
-set $MonitorLeft eDP1
-set $MonitorRight DisplayPort-1-2
+set $MonitorExternal HDMI-1
+set $MonitorInternal eDP-1
 
 # Define workspace output monitors
-workspace 1 output $MonitorLeft
-workspace 2 output $MonitorLeft
-workspace 3 output $MonitorCenter
-workspace 4 output $MonitorCenter
-workspace 5 output $MonitorCenter
-workspace 6 output $MonitorCenter
-workspace 7 output $MonitorRight
-workspace 8 output $MonitorRight
-workspace 9 output $MonitorRight
-workspace 10 output $MonitorRight
-workspace 11 output $MonitorCenter
-workspace 12 output $MonitorCenter
-workspace 13 output $MonitorCenter
-workspace 14 output $MonitorCenter
-workspace 15 output $MonitorCenter
-workspace 16 output $MonitorCenter
-workspace 17 output $MonitorCenter
-workspace 18 output $MonitorCenter
-workspace 19 output $MonitorCenter
-workspace 20 output $MonitorCenter
+workspace 1 output $MonitorInternal
+workspace 2 output $MonitorInternal
+workspace 3 output $MonitorInternal
+workspace 4 output $MonitorInternal
+workspace 5 output $MonitorInternal
+workspace 6 output $MonitorInternal
+workspace 7 output $MonitorInternal
+workspace 8 output $MonitorInternal
+workspace 9 output $MonitorInternal
+workspace 10 output $MonitorInternal
+workspace 11 output $MonitorExternal
+workspace 12 output $MonitorExternal
+workspace 13 output $MonitorExternal
+workspace 14 output $MonitorExternal
+workspace 15 output $MonitorExternal
+workspace 16 output $MonitorExternal
+workspace 17 output $MonitorExternal
+workspace 18 output $MonitorExternal
+workspace 19 output $MonitorExternal
+workspace 20 output $MonitorExternal
 
 # Switch between workspaces
 bindsym $mod+1 workspace 1

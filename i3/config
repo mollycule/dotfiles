@@ -8,8 +8,6 @@ set $mod Mod4
 # Set "floating" modifier
 floating_modifier $mod
 
-# --------------------
-
 # ----- Colors -----
 
 # Set color variables
@@ -41,9 +39,6 @@ client.unfocused         $bg   $bg     $fg  $bg    $bg
 client.urgent            $bg   $bg     $fg  $bg    $bg
 client.placeholder       $bg   $bg     $fg  $bg    $bg
 client.background        $bg
-
-# ------------------
-
 
 # ----- Launching Programs -----
 
@@ -79,10 +74,6 @@ bindsym $mod+Return exec urxvt +sb -title "Terminal"
 
 # Window Switcher 
 bindsym Mod1+Tab exec "$HOME/.config/scripts/rofi-window.sh"
-
-# ------------------------------
-
-
 
 # ----- Controlling Programs -----
 
@@ -140,17 +131,11 @@ bindsym $mod+Shift+r exec --no-startup-id "$HOME/.config/scripts/i3-restart.sh"
 # Exit window manager
 bindsym $mod+Shift+End exec --no-startup-id "$HOME/.config/scripts/rofi-exit.sh"
 
-# --------------------------------
-
-
 # ----- Backlight-----
 
 ## Set up backlight keybindings
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-
-# --------------------
-
 
 # ----- Volume -----
 
@@ -158,8 +143,6 @@ bindsym $mod+Shift+End exec --no-startup-id "$HOME/.config/scripts/rofi-exit.sh"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-
-# ------------------
 
 # ----- Workspaces -----
 
@@ -234,9 +217,6 @@ bindsym $mod+Control+Shift+8 move container to workspace 18
 bindsym $mod+Control+Shift+9 move container to workspace 19
 bindsym $mod+Control+Shift+0 move container to workspace 20
 
-# ----------------------
-
-
 # ----- Appearance  -----
 
 # Set the default font and title format of all windows
@@ -253,9 +233,6 @@ smart_borders on
 gaps inner 0
 gaps outer 0
 
-# -----------------------
-
-
 # ----- Applications -----
 
 bindsym $mod+Shift+c exec --no-startup-id /usr/bin/chromium
@@ -265,11 +242,6 @@ bindsym $mod+Shift+m exec --no-startup-id /usr/bin/vlc -I qt -LZ --no-playlist-a
 bindsym $mod+Shift+p exec --no-startup-id /usr/bin/chromium --incognito "https://youtube.com"
 bindsym $mod+Shift+w exec --no-startup-id "$HOME/.config/scripts/start-work.sh"
 
-# ------------------------
-
-
 # ----- Initialization -----
 
 exec --no-startup-id "$HOME/.config/scripts/start-up.sh"
-
-# --------------------------

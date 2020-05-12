@@ -99,10 +99,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Set split mode to horizontal
-bindsym $mod+Shift+h exec --no-startup-id "i3-msg split h && notify-send -u low \\"i3\\" \\"Set relative split mode to horizontal...\\""
+bindsym Mod1++h exec --no-startup-id "i3-msg split h && notify-send -u low \\"i3\\" \\"Set relative split mode to horizontal...\\""
 
 # Set split mode to vertical
-bindsym $mod+Shift+v exec --no-startup-id "i3-msg split v && notify-send -u low \\"i3\\" \\"Set relative split mode to veritcal...\\""
+bindsym Mod1+v exec --no-startup-id "i3-msg split v && notify-send -u low \\"i3\\" \\"Set relative split mode to veritcal...\\""
 
 # Change the container layout to stacking
 bindsym $mod+Shift+s exec --no-startup-id "i3-msg layout stacking && notify-send -u low \\"i3\\" \\"Switched to stacked layout...\\""

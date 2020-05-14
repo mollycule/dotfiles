@@ -12,3 +12,4 @@ i3-msg 'workspace 2; exec /usr/bin/firefox "file://$HOME/personal/dnd/player-han
 i3-msg 'workspace 2; exec /usr/bin/firefox "file://$HOME/personal/dnd/sword-coast-guide.pdf"'
 i3-msg 'workspace 2; exec /usr/bin/firefox "file://$HOME/personal/dnd/dungeon-master-guide.pdf"'
 i3-msg 'workspace 2; exec /usr/bin/slack'
+i3-msg 'workspace 3; exec /usr/bin/firefox "file://$HOME/personal/dnd/dungeon-master-screen.pdf"'

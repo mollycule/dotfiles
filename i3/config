@@ -92,6 +92,12 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# Resize window in current focus
+bindsym $mod+Ctrl+h resize grow width 1 px or 1 ppt
+bindsym $mod+Ctrl+j resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+k resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+l resize shrink width 1 px or 1 ppt
+
 # Move window in current focus
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down

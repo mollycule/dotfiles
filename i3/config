@@ -153,6 +153,13 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 
+# ----- Media -----
+
+# Set up media player controls
+bindsym Ctrl+Shift+z exec "mpc toggle"
+bindsym Ctrl+Shift+a exec "mpc next"
+bindsym Ctrl+Shift+q exec "mpc previous"
+
 # ----- Workspaces -----
 
 # Monitors

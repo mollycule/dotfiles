@@ -142,9 +142,9 @@ bindsym $mod+Shift+End exec --no-startup-id "$HOME/.config/scripts/rofi-exit.sh"
 
 # ----- Backlight-----
 
-## Set up backlight keybindings
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+# Set up backlight keybindings
+bindsym XF86MonBrightnessUp exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
 
 # ----- Volume -----
 

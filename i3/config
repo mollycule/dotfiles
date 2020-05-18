@@ -78,7 +78,8 @@ bindsym Mod1+Tab exec "$HOME/.config/scripts/rofi-window.sh"
 # ----- Controlling Programs -----
 
 # Tile all windows by default TODO: specify by application (cssh)
-#for_window [class="^.*"] tiling enable
+# Set Microsoft Teams notifications as floating
+for_window [title="Microsoft Teams Notification"] floating enable
 
 # Disable focus by hovering / Set mouse focus to "click"
 focus_follows_mouse no

@@ -88,6 +88,9 @@ mode "media" {
      bindsym a exec "mpc toggle"; mode "default"
      bindsym s exec "mpc next"; mode "default"
      bindsym d exec "mpc previous"; mode "default"
+     bindsym e exec --no-startup-id "$HOME/.config/scripts/bluetooth.sh --ear"
+     bindsym h exec --no-startup-id "$HOME/.config/scripts/headphones.sh"
+     bindsym r exec --no-startup-id "$HOME/.config/scripts/bluetooth.sh --speaker"
 
      bindsym Escape mode "default"
      bindsym Return mode "default"

@@ -65,6 +65,8 @@ mode "applications" {
      bindsym h exec --no-startup-id /usr/bin/firefox --private-window "https://youtube.com"; mode "default"
      bindsym k exec --no-startup-id "$HOME/.config/scripts/scrot-full.sh"; mode "default"
      bindsym --release l exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"; mode "default"
+     # Keybinding to quicken authentication to Microsoft's Azure Kubernetes Service (AKS)
+     bindsym s exec --no-startup-id /usr/bin/chromium "https://microsoft.com/devicelogin"
 
      bindsym Escape mode "default"
      bindsym Return mode "default"

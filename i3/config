@@ -66,7 +66,7 @@ mode "applications" {
      bindsym k exec --no-startup-id "$HOME/.config/scripts/scrot-full.sh"; mode "default"
      bindsym --release l exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"; mode "default"
      # Keybinding to quicken authentication to Microsoft's Azure Kubernetes Service (AKS)
-     bindsym s exec --no-startup-id /usr/bin/chromium "https://microsoft.com/devicelogin"
+     bindsym s exec --no-startup-id /usr/bin/chromium "https://microsoft.com/devicelogin"; mode "default"
 
      bindsym Escape mode "default"
      bindsym Return mode "default"
@@ -88,9 +88,9 @@ mode "media" {
      bindsym a exec "mpc toggle"; mode "default"
      bindsym s exec "mpc next"; mode "default"
      bindsym d exec "mpc previous"; mode "default"
-     bindsym e exec --no-startup-id "$HOME/.config/scripts/bluetooth.sh --ear"
-     bindsym h exec --no-startup-id "$HOME/.config/scripts/headphones.sh"
-     bindsym r exec --no-startup-id "$HOME/.config/scripts/bluetooth.sh --speaker"
+     bindsym e exec --no-startup-id "$HOME/.config/scripts/bluetooth.sh --ear"; mode "default"
+     bindsym h exec --no-startup-id "$HOME/.config/scripts/headphones.sh"; mode "default"
+     bindsym r exec --no-startup-id "$HOME/.config/scripts/bluetooth.sh --speaker"; mode "default"
 
      bindsym Escape mode "default"
      bindsym Return mode "default"

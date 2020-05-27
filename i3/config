@@ -72,7 +72,6 @@ mode "applications" {
 # f is for focus!
 bindsym $mod+f mode "focus"
 mode "focus" {
-     # Resize window in current focus
      bindsym Ctrl+h resize grow width 1 px or 1 ppt
      bindsym Ctrl+j resize shrink height 1 px or 1 ppt
      bindsym Ctrl+k resize grow height 1 px or 1 ppt
@@ -104,7 +103,6 @@ mode "rofi" {
      bindsym Return mode "default"
 }
 
-
 # ----- Controlling Programs -----
 
 # Tile all windows by default TODO: specify by application (cssh)
@@ -130,7 +128,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Set split mode to horizontal
-bindsym Mod1++h exec --no-startup-id "i3-msg split h && notify-send -u low \\"i3\\" \\"Set relative split mode to horizontal...\\""
+bindsym Mod1+h exec --no-startup-id "i3-msg split h && notify-send -u low \\"i3\\" \\"Set relative split mode to horizontal...\\""
 
 # Set split mode to vertical
 bindsym Mod1+v exec --no-startup-id "i3-msg split v && notify-send -u low \\"i3\\" \\"Set relative split mode to veritcal...\\""

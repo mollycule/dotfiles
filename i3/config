@@ -40,40 +40,70 @@ client.urgent            $bg   $bg     $fg  $bg    $bg
 client.placeholder       $bg   $bg     $fg  $bg    $bg
 client.background        $bg
 
-# ----- Launching Programs -----
+# ----- Modes -----
 
-# File manager(?) - TODO ranger?
-
-# Lock Screen (--tiling for multi-monitor setup)
+# Default Mode
 bindsym $mod+Shift+l exec --no-startup-id "$HOME/.config/scripts/lock.sh"
-
-# Network Manager
-bindsym $mod+Shift+F2 exec --no-startup-id "$HOME/.config/scripts/rofi-network.sh"
-
-# Password Manager
-# TODO change to keepassx or vault
-bindsym $mod+F12 exec --no-startup-id "$HOME/.config/scripts/rofi-lpass.sh"
-
-# Program Launcher
-bindsym $mod+Home exec "$HOME/.config/scripts/rofi-run.sh"
-
-# Screenshot (fullscreen)
-bindsym $mod+Insert exec --no-startup-id "$HOME/.config/scripts/scrot-full.sh"
-
-# Screenshot (selection)
-bindsym --release $mod+Shift+Insert exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"
-
-# SSH Launcher 
-bindsym $mod+Shift+Home exec "$HOME/.config/scripts/rofi-ssh.sh"
-
-# Text Editor
-bindsym $mod+Shift+a exec --no-startup-id /usr/bin/emacs
-
-# Terminal (rxvt-unicode)
 bindsym $mod+Return exec urxvt +sb -title "Terminal"
+bindsym $mod+Shift+r exec --no-startup-id "$HOME/.config/scripts/i3-restart.sh"
 
-# Window Switcher 
-bindsym Mod1+Tab exec "$HOME/.config/scripts/rofi-window.sh"
+bindsym XF86MonBrightnessUp exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
+
+# Customized Modes
+# a is for activate applications!
+bindsym $mod+a mode "applications"
+mode "applications" {
+     bindsym a exec --no-startup-id /usr/bin/emacs; mode "default"
+     bindsym c exec --no-startup-id /usr/bin/chromium; mode "default"
+     bindsym d exec --no-startup-id "$HOME/.config/scripts/start-roll20.sh"; mode "default"
+     bindsym f exec --no-startup-id /usr/bin/firefox --profile personal; mode "default"
+     bindsym h exec --no-startup-id /usr/bin/firefox --private-window "https://youtube.com"; mode "default"
+     bindsym k exec --no-startup-id "$HOME/.config/scripts/scrot-full.sh"; mode "default"
+     bindsym --release l exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"; mode "default"
+
+     bindsym Escape mode "default"
+     bindsym Return mode "default"
+}
+# f is for focus!
+bindsym $mod+f mode "focus"
+mode "focus" {
+     # Resize window in current focus
+     bindsym Ctrl+h resize grow width 1 px or 1 ppt
+     bindsym Ctrl+j resize shrink height 1 px or 1 ppt
+     bindsym Ctrl+k resize grow height 1 px or 1 ppt
+     bindsym Ctrl+l resize shrink width 1 px or 1 ppt
+
+     bindsym Escape mode "default"
+     bindsym Return mode "default"
+}
+# s is for songs!
+bindsym $mod+s mode "media"
+mode "media" {
+     bindsym a exec "mpc toggle"; mode "default"
+     bindsym s exec "mpc next"; mode "default"
+     bindsym d exec "mpc previous"; mode "default"
+
+     bindsym Escape mode "default"
+     bindsym Return mode "default"
+}
+# d is for dialog!
+bindsym $mod+d mode "rofi"
+mode "rofi" {
+     bindsym a exec --no-startup-id "$HOME/.config/scripts/rofi-run.sh"; mode "default"
+     bindsym s exec --no-startup-id "$HOME/.config/scripts/rofi-network.sh"; mode "default"
+     bindsym d exec --no-startup-id "$HOME/.config/scripts/rofi-display.sh"; mode "default"
+     bindsym f exec --no-startup-id "$HOME/.config/scripts/rofi-lpass.sh"; mode "default"
+     bindsym l exec --no-startup-id "$HOME/.config/scripts/rofi-exit.sh"; mode "default"
+
+     bindsym Escape mode "default"
+     bindsym Return mode "default"
+}
+
 
 # ----- Controlling Programs -----
 
@@ -92,12 +122,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# Resize window in current focus
-bindsym $mod+Ctrl+h resize grow width 1 px or 1 ppt
-bindsym $mod+Ctrl+j resize shrink height 1 px or 1 ppt
-bindsym $mod+Ctrl+k resize grow height 1 px or 1 ppt
-bindsym $mod+Ctrl+l resize shrink width 1 px or 1 ppt
 
 # Move window in current focus
 bindsym $mod+Shift+h move left
@@ -134,32 +158,6 @@ bindsym $mod+p focus parent
 
 # Kill the currently focused container
 bindsym $mod+q kill
-
-# Restart window manager in-place
-bindsym $mod+Shift+r exec --no-startup-id "$HOME/.config/scripts/i3-restart.sh"
-
-# Exit window manager
-bindsym $mod+Shift+End exec --no-startup-id "$HOME/.config/scripts/rofi-exit.sh"
-
-# ----- Backlight-----
-
-# Set up backlight keybindings
-bindsym XF86MonBrightnessUp exec light -A 2
-bindsym XF86MonBrightnessDown exec light -U 2
-
-# ----- Volume -----
-
-# Set up system volume keybindings
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
-
-# ----- Media -----
-
-# Set up media player controls
-bindsym Ctrl+Shift+z exec "mpc toggle"
-bindsym Ctrl+Shift+a exec "mpc next"
-bindsym Ctrl+Shift+q exec "mpc previous"
 
 # ----- Workspaces -----
 

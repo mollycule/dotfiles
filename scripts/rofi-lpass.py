@@ -8,7 +8,7 @@ import sys
 
 # ----- Configuration -----
 lpass_path = '/usr/bin/lpass'
-lpass_user = 'example@email.com'
+lpass_user = os.getenv('LPASS_USER', 'example@email.com')
 rofi_args  = ''
 rofi_path  = '/usr/bin/rofi'
 # -------------------------

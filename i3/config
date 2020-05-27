@@ -245,14 +245,6 @@ smart_borders on
 gaps inner 0
 gaps outer 0
 
-# ----- Applications -----
-
-bindsym $mod+Shift+c exec --no-startup-id /usr/bin/chromium
-bindsym $mod+Shift+d exec --no-startup-id "$HOME/.config/scripts/docking.sh"
-bindsym $mod+Shift+m exec --no-startup-id /usr/bin/vlc -I qt -LZ --no-playlist-autostart ~/personal/music/songs/*
-bindsym $mod+Shift+p exec --no-startup-id /usr/bin/chromium --incognito "https://youtube.com"
-bindsym $mod+Shift+w exec --no-startup-id "$HOME/.config/scripts/start-work.sh"
-
 # ----- Initialization -----
 
 exec --no-startup-id "$HOME/.config/scripts/start-up.sh"

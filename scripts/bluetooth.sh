@@ -18,14 +18,12 @@ case "$1" in
     ;;
 esac
 
-PASSWORD_CMD=$(su $USER -c "DISPLAY=:0 pass ${BLUETOOTH_DEVICE} | head -n 1")
-
 if [ "$#" -ne 1 ]; then
   usage
 fi
 
-if ! sudo systemctl start bluetoothctl; then
-  if ! sudo systemctl restart bluetoothctl; then
+if ! sudo systemctl start bluetooth; then
+  if ! sudo systemctl restart bluetooth; then
     notify-send -u normal "BLU" "Restarting bluetooth service." &
   fi
 else
@@ -37,8 +35,8 @@ sudo bluetoothctl agent on
 
 passed=false
 for n in {1..5}; do
-  if sudo bluetoothctl connect $DEVICE; then
-    if sudo bluetoothctl info $DEVICE | grep -q 'Connected: yes'; then
+  if sudo bluetoothctl connect ${BLUETOOTH_DEVICE}; then
+    if sudo bluetoothctl info ${BLUETOOTH_DEVICE} | grep -q 'Connected: yes'; then
       notify-send -u normal "BLU" "Successfully started bluetooth profile." &
       passed=true
       break

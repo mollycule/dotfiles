@@ -20,6 +20,8 @@ HISTFILESIZE=50000
 
 # Aliaseses
 alias dnd='cd /home/justa/projects/personal/totty/dnd'
+alias notes='cd /home/justa/projects/personal/mollycule/gitlab/notes/'
+alias resume='cd /home/justa/.career/resume/resume-master/'
 alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
 alias netstat='ss -pantu | column -t'

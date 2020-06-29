@@ -1,6 +1,6 @@
 # Contains exported environment variables.
 export DUNST_FONT='Iosevka SS02 10'
-export DUNST_SIZE='300x30+2414+20'
+export DUNST_SIZE='300x30-1000+20' # geometry [{width}]x{height}][+/-{x}+/-{y}]
 export EDITOR='vim'
 export LANG='en_US.UTF-8'
 export LANGUAGE='en_US.UTF-8'

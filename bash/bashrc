@@ -14,9 +14,15 @@ export PS1="\u@\h [\W] "
 # Stop stupid beep
 xset -b
 
-## History settings
-HISTSIZE=50000
-HISTFILESIZE=50000
+# History settings
+shopt -s histappend # Append, not rewrite ~/.bash_history
+shopt -s cmdhist # Squash multi-line commands to one in history
+export HISTTIMEFORMAT='[%F %T] '
+export HISTSIZE=50000
+export HISTFILESIZE=50000
+export PROMPT_COMMAND='history -a'
+export HISTCONTROL=ignoredups # colon-separated list
+export HISTIGNORE="history" # colon-separated list and supports globs
 
 # Aliaseses
 alias dnd='cd /home/justa/projects/personal/totty/dnd'

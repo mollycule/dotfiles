@@ -5,8 +5,11 @@
 
 [global]
 
+geometry = "${DUNST_SIZE}"
+font = "${DUNST_FONT}"
+
 # Disable markup
-markup = no
+markup = full
 
 # Don't treat all incoming notifications as plain text
 plain_text = no
@@ -107,12 +110,18 @@ frame_width = 0
 # ----- Urgency Settings -----
 
 [urgency_low]
-timeout = 3
+background = "$color0"
+foreground = "#ffffff"
+timeout = 2
 
 
 [urgency_normal]
+background = "$color7"
+foreground = "#ffffff"
 timeout = 3
 
 
 [urgency_critical]
+background = "$color4"
+foreground = "#ffffff"
 timeout = 5

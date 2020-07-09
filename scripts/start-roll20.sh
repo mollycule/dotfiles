@@ -11,6 +11,6 @@ i3-msg 'workspace 1; exec /usr/bin/firefox --new-window "https://roll20.net/welc
 i3-msg 'workspace 2; exec /usr/bin/firefox "file://$HOME/personal/dnd/player-handbook.pdf"' && sleep 1s
 i3-msg 'workspace 2; exec /usr/bin/firefox "file://$HOME/personal/dnd/sword-coast-guide.pdf"' && sleep 1s
 i3-msg 'workspace 2; exec /usr/bin/firefox "file://$HOME/personal/dnd/dungeon-master-guide.pdf"' && sleep 1s
-i3-msg 'workspace 2; exec /usr/bin/feh --image-bg black $HOME/personal/dnd/character-sheet-skills.png'
+i3-msg 'workspace 2; exec /usr/bin/feh --auto-zoom --image-bg black $HOME/personal/dnd/character-sheet-skills.png'
 i3-msg 'workspace 2; exec /usr/bin/slack' && sleep 2s
 i3-msg 'workspace 3; exec /usr/bin/firefox --new-window "file://$HOME/personal/dnd/dungeon-master-screen.pdf"'

@@ -29,3 +29,6 @@ fi
 
 cp -f $HOME/.cache/wal/colors-emacs.el $HOME/.emacs.d/themes/wal.el
 
+# Reload cached wallpaper
+# Especially helpful after display change (such as un/docking)
+wal -i "$(cat $HOME/.cache/wal/wal)"

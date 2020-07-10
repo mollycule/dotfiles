@@ -16,7 +16,7 @@ killall -9 dunst
 
 # Substitute environment variables before launching
 # (since dunst can't handle environment variables >_>) 
-dunst -conf <(envsubst < $HOME/.config/dunst/dunstrc) &
+dunst -lb "$color3" -nb "$color0" -cb "$color4" -conf <(envsubst < $HOME/.config/dunst/dunstrc) &
 
 # Restart and re-theme polybar
 killall -q polybar >/dev/null 2>&1

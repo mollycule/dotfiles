@@ -110,18 +110,15 @@ frame_width = 0
 # ----- Urgency Settings -----
 
 [urgency_low]
-background = "$color0"
 foreground = "#ffffff"
 timeout = 2
 
 
 [urgency_normal]
-background = "$color7"
 foreground = "#ffffff"
 timeout = 3
 
 
 [urgency_critical]
-background = "$color4"
 foreground = "#ffffff"
 timeout = 5

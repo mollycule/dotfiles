@@ -59,13 +59,14 @@ bindsym $mod+a mode "applications"
 mode "applications" {
      bindsym a exec --no-startup-id /usr/bin/emacs; mode "default"
      bindsym c exec --no-startup-id /usr/bin/chromium; mode "default"
-     bindsym d exec --no-startup-id "$HOME/.config/scripts/start-roll20.sh"; mode "default"
-     bindsym f exec --no-startup-id /usr/bin/firefox --profile personal; mode "default"
+     bindsym d exec --no-startup-id /usr/bin/firefox --profile work; mode "default"
+     # Keybinding to quicken authentication to Microsoft's Azure Kubernetes Service (AKS)
+     bindsym f exec --no-startup-id /usr/bin/chromium "https://microsoft.com/devicelogin"; mode "default"
      bindsym h exec --no-startup-id /usr/bin/firefox --private-window "https://youtube.com"; mode "default"
      bindsym k exec --no-startup-id "$HOME/.config/scripts/scrot-full.sh"; mode "default"
      bindsym --release l exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"; mode "default"
-     # Keybinding to quicken authentication to Microsoft's Azure Kubernetes Service (AKS)
-     bindsym s exec --no-startup-id /usr/bin/chromium "https://microsoft.com/devicelogin"; mode "default"
+     bindsym s exec --no-startup-id /usr/bin/firefox --profile personal; mode "default"
+     bindsym w exec --no-startup-id "$HOME/.config/scripts/start-roll20.sh"; mode "default"
 
      bindsym Escape mode "default"
      bindsym Return mode "default"

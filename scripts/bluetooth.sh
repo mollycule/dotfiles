@@ -24,10 +24,10 @@ fi
 
 if ! sudo systemctl start bluetooth; then
   if ! sudo systemctl restart bluetooth; then
-    notify-send -u normal "BLU" "Restarting bluetooth service." &
+    notify-send -u low "BLU" "Restarting bluetooth service." &
   fi
 else
-  notify-send -u normal "BLU" "Starting bluetooth service." &
+  notify-send -u low "BLU" "Starting bluetooth service." &
 fi
   
 sudo bluetoothctl power on
@@ -37,7 +37,7 @@ passed=false
 for n in {1..5}; do
   if sudo bluetoothctl connect ${BLUETOOTH_DEVICE}; then
     if sudo bluetoothctl info ${BLUETOOTH_DEVICE} | grep -q 'Connected: yes'; then
-      notify-send -u normal "BLU" "Successfully started bluetooth profile." &
+      notify-send -u low "BLU" "Successfully started bluetooth profile." &
       passed=true
       break
     fi
@@ -46,6 +46,6 @@ for n in {1..5}; do
 done
 
 if [ "$passed" = false ]; then
-  notify-send -u normal "BLU" "Unable to start bluetooth profile." &
+  notify-send -u critical "BLU" "Unable to start bluetooth profile." &
   exit 1
 fi

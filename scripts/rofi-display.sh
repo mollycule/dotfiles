@@ -11,7 +11,12 @@ if [ $choice == "CANCEL" ]; then
 else
   notify-send -u low "DIS" "Starting xrandr layout..." &
   if ! $HOME/.screenlayout/$choice; then
-    notify-send -u normal "DIS" "Unable to switch xrandr layouts." &
+    notify-send -u critical "DIS" "Unable to switch xrandr layouts." &
     exit 1
+  else
+    if ! $HOME/.config/scripts/i3-restart.sh; then
+      notify-send -u critical "DIS" "Unable to restart i3." &
+      exit 1
+    fi
   fi
 fi

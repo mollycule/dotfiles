@@ -25,8 +25,8 @@ export HISTCONTROL=ignoredups # colon-separated list
 export HISTIGNORE="history" # colon-separated list and supports globs
 
 # Aliaseses
-alias dnd='cd /home/justa/projects/personal/totty/dnd'
-alias notes='cd /home/justa/projects/personal/mollycule/gitlab/notes/'
+alias dnd='cd /home/justa/projects/totty/dnd'
+alias notes='cd /home/justa/projects/mollycule/gitlab/notes/'
 alias resume='cd /home/justa/.career/resume/resume-master/'
 alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'

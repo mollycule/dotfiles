@@ -37,6 +37,10 @@ source <(kubectl completion bash)
 alias k='kubectl'
 complete -F __start_kubectl k
 
+# Set env variable for Qt themes
+# in response to wanting a dark theme for VirtualBox
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 # Autocorrect previous command
 eval "$(thefuck --alias)"
 

@@ -240,17 +240,9 @@ type = internal/i3
 enable-click = true
 enable-scroll = true
 format = <label-state>
-fuzzy-match = true
-index-sort = true
 label-focused = "%{O2}[ %index% ] "
-label-mode = %mode%
-label-unfocused = "%{O2}  %index%  "
+label-unfocused = "%{O2}  %index%   "
 label-urgent = "%{O2}  %index%!  "
-label-visible = "%{O2}[ %index% ] "
-pin-workspaces = true
-reverse-scroll = false
-strip-wsnumbers = false
-wrapping-scroll = true
 
 [module/memory]
 type = internal/memory

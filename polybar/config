@@ -19,7 +19,7 @@ height = 20
 
 [monitors]
 # TODO pull from env variables
-center = HDMI-1
+center = DP-2-2
 left = eDP-1
 right = HDMI-1
 
@@ -51,7 +51,7 @@ module-margin-right = 0
 module-margin-left = 2
 
 modules-right = cpu memory temp-cpu battery 
-modules-center = date
+modules-center = date display
 modules-left = i3
 
 background = ${colors.bg}
@@ -228,6 +228,12 @@ label = [ %date% %time% ]
 label-underline = ${colors.fg}
 label-foreground = ${colors.fg}
 label-background = ${colors.bg}
+
+[module/display]
+type = custom/text
+content = [ DISPLAY ]
+click-left = $HOME/.config/scripts/rofi-display-polybar.sh
+
 
 [module/i3]
 type = internal/i3

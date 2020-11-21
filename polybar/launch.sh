@@ -17,7 +17,7 @@ AVAILABLE_MONITORS=$(polybar --list-monitors)
 if echo $AVAILABLE_MONITORS | grep -q 'eDP-1'; then
 	polybar bar-primary &
 fi
-if echo $AVAILABLE_MONITORS | grep -q 'HDMI-1'; then
+if echo $AVAILABLE_MONITORS | grep -q -E '(HDMI-1|DP-2-2)'; then
 	polybar bar-single-monitor &
 fi
 if echo $AVAILABLE_MONITORS | grep -q 'DisplayPort-1-2'; then

@@ -19,7 +19,7 @@ height = 20
 
 [monitors]
 # TODO pull from env variables
-center = DP-2-2
+center = DP-1-2
 left = eDP-1
 right = HDMI-1
 

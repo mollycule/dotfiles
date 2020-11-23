@@ -165,7 +165,7 @@ bindsym $mod+q kill
 # ----- Workspaces -----
 
 # Monitors
-set $MonitorExternal DP-2-2
+set $MonitorExternal DP-1-2
 set $MonitorInternal eDP-1
 
 # Define workspace output monitors

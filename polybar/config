@@ -11,7 +11,7 @@ margin-bottom = 100
 [colors]
 # Inherit colors from X
 fg = ${xrdb:color7}
-bg = ${xrdb:color3}
+bg = ${xrdb:color0}
 modfg = ${xrdb:color1}
 
 [sizes]

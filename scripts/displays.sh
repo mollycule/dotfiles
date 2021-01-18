@@ -4,7 +4,7 @@
 
 display_count=$(xrandr | grep ' connected' | wc -l)
 
-one_monitor="$HOME/.screenlayout/monitor_4k.sh"
+one_monitor="$HOME/.screenlayout/monitor_4k_DP.sh"
 
 undocked="$HOME/.screenlayout/laptop_1080p.sh"
 

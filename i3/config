@@ -67,6 +67,7 @@ mode "applications" {
      bindsym --release l exec --no-startup-id "$HOME/.config/scripts/scrot-select.sh"; mode "default"
      bindsym s exec --no-startup-id /usr/bin/firefox -P personal --browser; mode "default"
      bindsym w exec --no-startup-id "$HOME/.config/scripts/start-roll20.sh"; mode "default"
+     bindsym x exec --no-startup-id "$HOME/.config/scripts/rofi-xdg-firefox-profiles.sh"; mode "default"
 
      bindsym Escape mode "default"
      bindsym Return mode "default"

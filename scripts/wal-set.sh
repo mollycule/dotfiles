@@ -29,6 +29,9 @@ fi
 
 cp -f $HOME/.cache/wal/colors-emacs.el $HOME/.emacs.d/themes/wal.el
 
+# Copy scheme to kitty terminal emulator
+cp -f $HOME/.cache/wal/colors-kitty.conf $HOME/.config/kitty/colors-kitty.conf
+
 # Reload cached wallpaper
 # Especially helpful after display change (such as un/docking)
 if [ -f "$HOME/.cache/wal/wal" ]; then

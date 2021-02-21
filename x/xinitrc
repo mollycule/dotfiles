@@ -11,8 +11,5 @@ xset -b
 # Merge in the Xresources
 xrdb -merge "$HOME/.config/x/Xresources"
 
-# Setup the urxvt daemon
-urxvtd -q -f &
-
 # Start i3
 exec i3

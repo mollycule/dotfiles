@@ -44,8 +44,10 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # Autocorrect previous command
 eval "$(thefuck --alias)"
 
+# Use ssh kitten to automatically copy terminfo to remote hosts to enable kitty
 function ssh {
     echo -e '\033]2;'"SSH : $1"'\007'
-    TERM="rxvt" /usr/bin/ssh $@
+    kitty +kitten ssh $@
+    #TERM="rxvt" /usr/bin/ssh $@
 }
 

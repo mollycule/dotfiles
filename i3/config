@@ -11,12 +11,12 @@ floating_modifier $mod
 # ----- Colors -----
 
 # Set color variables
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color0 #f0f0f0
+set_from_resource $fg i3wm.color0 #f0f0f0
+set_from_resource $bg i3wm.color15 #f0f0f0
 set_from_resource $c0 i3wm.color0 #f0f0f0
 set_from_resource $c1 i3wm.color1 #f0f0f0
 set_from_resource $c2 i3wm.color2 #f0f0f0
-set_from_resource $c3 i3wm.color4 #f0f0f0
+set_from_resource $c3 i3wm.color3 #f0f0f0
 set_from_resource $c4 i3wm.color4 #f0f0f0
 set_from_resource $c5 i3wm.color5 #f0f0f0
 set_from_resource $c6 i3wm.color6 #f0f0f0
@@ -32,10 +32,10 @@ set_from_resource $c15 i3wm.color15 #f0f0f0
 
 # Set window colors
 # CLASS                  BRDR  BCKGRD  TXT  NDCTR  CHLDBRDR
-client.focused           $c3   $c3     $fg  $c3    $c3
-client.focused_inactive  $bg   $bg     $fg  $bg    $bg
-client.unfocused         $bg   $bg     $fg  $bg    $bg
-client.urgent            $bg   $bg     $fg  $bg    $bg
+client.focused           $c2   $c2     $fg  $c2    $c2
+client.focused_inactive  $fg   $fg     $bg  $fg    $fg
+client.unfocused         $fg   $fg     $bg  $fg    $fg
+client.urgent            $c3   $c3     $fg  $c3    $c3
 client.placeholder       $bg   $bg     $fg  $bg    $bg
 client.background        $bg
 
@@ -43,7 +43,7 @@ client.background        $bg
 
 # Default Mode
 bindsym $mod+z exec --no-startup-id "$HOME/.config/scripts/lock.sh"
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty --title "Terminal"
 bindsym $mod+Shift+r exec --no-startup-id "$HOME/.config/scripts/i3-restart.sh"
 
 bindsym XF86MonBrightnessUp exec light -A 2

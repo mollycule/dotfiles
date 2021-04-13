@@ -10,9 +10,9 @@ margin-bottom = 100
 
 [colors]
 # Inherit colors from X
-fg = ${xrdb:color7}
+fg = ${xrdb:color15}
 bg = ${xrdb:color0}
-modfg = ${xrdb:color1}
+modfg = ${xrdb:color7}
 
 [sizes]
 height = 20
@@ -26,7 +26,7 @@ right = HDMI-1
 ; ----- Bar Settings -----
 
 [bar/bar-primary]
-monitor = ${monitors.left} 
+monitor = ${monitors.left}
 bottom = false
 
 fixed-center = true
@@ -50,7 +50,7 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = cpu memory temp-cpu battery 
+modules-right = cpu memory network temp-cpu battery
 modules-center = date display
 modules-left = i3
 
@@ -92,7 +92,7 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = cpu memory temp-cpu battery
+modules-right = cpu memory network temp-cpu battery
 modules-center = date
 modules-left = i3
 
@@ -134,7 +134,7 @@ padding-right = 1
 module-margin-right = 0
 module-margin-left = 2
 
-modules-right = cpu memory temp-cpu battery 
+modules-right = cpu memory network temp-cpu battery
 modules-center = date
 modules-left = i3
 
@@ -258,7 +258,14 @@ host = 127.0.0.1
 port = 6600
 ; Seconds to sleep between progressbar/song timer sync
 ; Default: 1
-interval = 2
+interval = 15
+
+[module/network]
+type = internal/network
+interface = wlp0s20f3
+interval = 3
+label-connected = [ NET %signal% ]
+label-disconnected = [ NET ! ]
 
 [module/temp-cpu]
 type = internal/temperature

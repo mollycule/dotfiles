@@ -16,7 +16,7 @@ killall -9 dunst
 
 # Substitute environment variables before launching
 # (since dunst can't handle environment variables >_>) 
-dunst -lb "$color3" -nb "$color4" -cb "$color1" -conf <(envsubst < $HOME/.config/dunst/dunstrc) &
+dunst -lb "$color14" -nb "$color11" -cb "$color9" -conf <(envsubst < $HOME/.config/dunst/dunstrc) &
 
 # Restart and re-theme polybar
 killall -q polybar >/dev/null 2>&1
@@ -29,11 +29,10 @@ fi
 
 cp -f $HOME/.cache/wal/colors-emacs.el $HOME/.emacs.d/themes/wal.el
 
-# Copy scheme to kitty terminal emulator
-cp -f $HOME/.cache/wal/colors-kitty.conf $HOME/.config/kitty/colors-kitty.conf
-
-# Reload cached wallpaper
+# Reload cached wallpaper and color scheme
 # Especially helpful after display change (such as un/docking)
-if [ -f "$HOME/.cache/wal/wal" ]; then
-  wal -i "$wallpaper"
+${HOME}/.fehbg
+
+if [ -f "$HOME/.cache/wal/schemes/grubbox-light.json" ]; then
+  wal --theme "$HOME/.cache/wal/schemes/grubbox-light.json"
 fi

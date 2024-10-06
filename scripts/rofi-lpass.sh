@@ -4,7 +4,7 @@
 
 notify-send -u low "i3" "Fetching password database..." &
 
-output=$($HOME/.config/scripts/rofi-lpass.py)
+output=$("$HOME"/.config/scripts/rofi-lpass.py)
 
 if [ "$output" = "ERROR" ]; then
     notify-send -u critical "i3" "Encountered runtime error." &

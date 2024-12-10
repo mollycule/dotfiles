@@ -2,10 +2,9 @@
 # ~/.config/scripts/rofi-exit.sh
 # A simple wrapper around rofi for exiting the window manager.
 
-options="Cancel|Logout|Restart|Shutdown"
 prompt="Mmmmmyyyeeeessss?"
 
-result=$(echo "$options" | rofi -sep "|" -dmenu -i -only-match -l 4 -p "$prompt")
+result=$(printf 'Logout\nRestart\nShutdown' | rofi -dmenu -i -p "$prompt")
 
 if [ "$result" == "Cancel" ]; then
     exit 0

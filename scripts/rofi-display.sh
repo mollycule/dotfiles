@@ -4,7 +4,7 @@
 
 layouts="$(find -L $HOME/.screenlayout -maxdepth 1 -executable -type f | cut -d '/' -f 5 | sort | paste -sd '|')"
 prompt="Switch X RandR Layout :"
-choice=$(echo "CANCEL|$layouts" | rofi -sep '|' -dmenu -i -only-match -p "$prompt")
+choice=$(echo "CANCEL|$layouts" | rofi -sep '|' -dmenu -i -p "$prompt")
 
 if [ $choice == "CANCEL" ]; then
   exit 0
